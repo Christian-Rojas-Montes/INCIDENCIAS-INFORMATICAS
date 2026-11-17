@@ -1,0 +1,42 @@
+<?php
+
+return [
+    'accepted' => 'El campo :attribute debe aceptarse.',
+    'boolean' => 'El campo :attribute debe ser verdadero o falso.',
+    'email' => 'El campo :attribute debe ser una dirección de correo válida.',
+    'exists' => 'El valor seleccionado para :attribute no es válido.',
+    'in' => 'El valor seleccionado para :attribute no es válido.',
+    'integer' => 'El campo :attribute debe ser un número entero.',
+    'max' => [
+        'array' => 'El campo :attribute no puede tener más de :max elementos.',
+        'file' => 'El campo :attribute no puede pesar más de :max kilobytes.',
+        'numeric' => 'El campo :attribute no puede ser mayor que :max.',
+        'string' => 'El campo :attribute no puede tener más de :max caracteres.',
+    ],
+    'min' => [
+        'array' => 'El campo :attribute debe tener al menos :min elementos.',
+        'file' => 'El campo :attribute debe pesar al menos :min kilobytes.',
+        'numeric' => 'El campo :attribute debe ser como mínimo :min.',
+        'string' => 'El campo :attribute debe tener al menos :min caracteres.',
+    ],
+    'required' => 'El campo :attribute es obligatorio.',
+    'string' => 'El campo :attribute debe ser texto.',
+    'unique' => 'El valor de :attribute ya está registrado.',
+    'attributes' => [
+        'nombre' => 'nombre',
+        'email' => 'correo electrónico',
+        'telefono' => 'teléfono',
+        'departamento' => 'área o departamento',
+        'especialidad' => 'especialidad',
+        'activo' => 'estado del técnico',
+        'nivel' => 'nivel',
+        'descripcion' => 'descripción',
+        'titulo' => 'asunto',
+        'estado' => 'estado',
+        'usuario_id' => 'solicitante',
+        'tecnico_id' => 'técnico',
+        'prioridad_id' => 'prioridad',
+        'incidencia_id' => 'incidencia',
+        'comentario' => 'comentario',
+    ],
+];

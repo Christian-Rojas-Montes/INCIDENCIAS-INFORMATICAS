@@ -1,0 +1,11 @@
+@extends('layouts.app')
+@section('title', $usuario->exists ? 'Editar usuario' : 'Nuevo usuario')
+@section('content')
+<div class="mb-4"><a class="small text-decoration-none" href="{{ route('usuarios.index') }}">← Usuarios</a><h1 class="h2 page-title mt-2 mb-1">{{ $usuario->exists ? 'Editar usuario' : 'Registrar usuario' }}</h1><p class="text-muted mb-0">Completa los datos de contacto del solicitante.</p></div>
+<div class="card p-4 p-lg-5"><form method="POST" action="{{ $usuario->exists ? route('usuarios.update', $usuario) : route('usuarios.store') }}">@csrf @if($usuario->exists) @method('PUT') @endif
+<div class="row g-3"><div class="col-md-6"><label class="form-label" for="nombre">Nombre completo *</label><input id="nombre" name="nombre" class="form-control @error('nombre') is-invalid @enderror" value="{{ old('nombre', $usuario->nombre) }}" required maxlength="150">@error('nombre')<div class="invalid-feedback">{{ $message }}</div>@enderror</div>
+<div class="col-md-6"><label class="form-label" for="email">Correo electrónico *</label><input id="email" name="email" type="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email', $usuario->email) }}" required>@error('email')<div class="invalid-feedback">{{ $message }}</div>@enderror</div>
+<div class="col-md-6"><label class="form-label" for="telefono">Teléfono</label><input id="telefono" name="telefono" class="form-control @error('telefono') is-invalid @enderror" value="{{ old('telefono', $usuario->telefono) }}" maxlength="30">@error('telefono')<div class="invalid-feedback">{{ $message }}</div>@enderror</div>
+<div class="col-md-6"><label class="form-label" for="departamento">Área o departamento</label><input id="departamento" name="departamento" class="form-control @error('departamento') is-invalid @enderror" value="{{ old('departamento', $usuario->departamento) }}" maxlength="150">@error('departamento')<div class="invalid-feedback">{{ $message }}</div>@enderror</div></div>
+<div class="d-flex justify-content-end gap-2 mt-4"><a class="btn btn-light" href="{{ route('usuarios.index') }}">Cancelar</a><button class="btn btn-primary" type="submit">{{ $usuario->exists ? 'Guardar cambios' : 'Registrar usuario' }}</button></div></form></div>
+@endsection
